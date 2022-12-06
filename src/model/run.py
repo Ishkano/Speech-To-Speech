@@ -6,3 +6,9 @@ class Run:
 
     def train(self, model, data, params):
         pass
+
+    def test(self):
+        pass
+
+    def export_model(self):
+        pass

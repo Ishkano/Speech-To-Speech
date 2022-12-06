@@ -8,19 +8,13 @@ class Controller(Parameters):
 
     def __init__(self):
         # Preprocessing pipeline
-        self.data = self.prepare_data()
+        self.data_loaders = Preprocessing(Parameters)
 
         # Initialize the model
         self.model = Model(Parameters)
 
         # Training - Evaluation pipeline
-        Run().train(self.model, self.data, Parameters)
-
-    @staticmethod
-    def prepare_data():
-        # Preprocessing pipeline
-        pr = Preprocessing()
-        return pr.get_preprocd()
+        Run().train(self.model, self.data_loaders, Parameters)
 
 
 if __name__ == '__main__':
