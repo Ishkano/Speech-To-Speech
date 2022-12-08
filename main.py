@@ -8,9 +8,9 @@ class Controller(Parameters):
 
     def __init__(self):
         # Preprocessing pipeline
-        self.data_loaders = Preprocessing(Parameters)
+        self.data_loaders = Preprocessing(Parameters).train_test_loaders()
 
-        # Initialize the model
+        # Initialize the models
         self.model = Model(Parameters)
 
         # Training - Evaluation pipeline

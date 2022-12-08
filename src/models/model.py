@@ -1,11 +1,17 @@
+from .audio_encoder import AudioEncoder
+from .speaker_encoder import SpeakerEncoder
+from .decoder import Decoder
+from .vocoder import Vocoder
+
 import torch.nn as nn
 from torch import sigmoid
 
 
 class Model(nn.Module):
-    """Игрушечная нейросеть для теста"""
 
-    def __init__(self):
+    '''Model containing all the pieces of speech-to-speech synthesizer'''
+
+    def __init__(self, params):
         super(Model, self).__init__()
         self.fc1 = nn.Linear(2, 50)
         self.fc2 = nn.Linear(50, 50)

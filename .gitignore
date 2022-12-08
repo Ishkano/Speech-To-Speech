@@ -77,6 +77,10 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Temporary files
+tmp.ipynb
+!*/tmp.ipynb
+
 # IPython
 profile_default/
 ipython_config.py

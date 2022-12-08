@@ -2,11 +2,12 @@ import torch
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(frozen=False)
 class Parameters:
 
     device: str = 'cuda' if torch.cuda.is_available() else 'cpu'
-    train_size: float = 0.8
+    test_size: float = 0.2
+    train_size: float = 1 - test_size
 
     model_type: str = 'default'
     loss_fn: str = 'default'
